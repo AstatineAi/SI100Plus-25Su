@@ -1,5 +1,5 @@
 ---
-title: Lecture_01_Search
+title: Lecture_02_Search
 separator: <!--s-->
 verticalSeparator: <!--v-->
 theme: simple
@@ -15,9 +15,9 @@ revealOptions:
 
 <div style="display: flex; justify-content: center; align-items: center; height: 700px;">
   <div style="text-align: center; padding: 40px; background-color: white; border: 2px solid rgb(0, 63, 163); border-radius: 20px; box-shadow: 0 0 20px rgba(0,0,0,0.1);">
-    <h1 style="font-size: 48px; font-weight: bold; margin-bottom: 20px; color: #333;">SI100+ 2024 Lecture 01</h1>
+    <h1 style="font-size: 48px; font-weight: bold; margin-bottom: 20px; color: #333;">SI100+ 2025 Lecture 02</h1>
     <p style="font-size: 24px; color: #666;">如何用搜索解决问题</p>
-    <p style="font-size: 16px; color: #999; margin-top: 20px;">SI100+ 2024 Staff | 2024-08-23</p>
+    <p style="font-size: 16px; color: #999; margin-top: 20px;">SI100+ 2025 Staff | 2025-08-08</p>
   </div>
 </div>
 
@@ -36,6 +36,7 @@ revealOptions:
 ## 情景回想
 
 - 你困惑的不是一个用来锻炼你的问题
+  - “刻意练习”是真实存在的
   - 比如一些值得一做的习题之外的问题
 - 你已经尝试过了一些方法，但是没有找到答案
 - 你可能有一个解决方法，但是不确定是否合适/有没有更好的方法

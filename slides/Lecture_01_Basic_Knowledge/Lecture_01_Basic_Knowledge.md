@@ -1,5 +1,5 @@
 ---
-title: Lecture_i_Basic_Knowledge # Slide 标题
+title: Lecture_01_Basic_Knowledge # Slide 标题
 separator: <!--s-->
 verticalSeparator: <!--v-->
 theme: simple
@@ -7,9 +7,9 @@ highlightTheme: github
 css: assets/custom.css
 autoTitlePage: true # 一级标题 `#` 开头的将自动居中并占满一页
 makeTitle: # 制作封面页
-    lecture: SI100+ 2024 Lecture i
+    lecture: SI100+ 2025 Lecture 01
     title: 计算机基本知识
-    detail: SI100+ 2024 Staff | 2024-08-22
+    detail: SI100+ 2025 Staff | 2025-08-08
 makeThanks: true # 制作结尾页
 ---
 
