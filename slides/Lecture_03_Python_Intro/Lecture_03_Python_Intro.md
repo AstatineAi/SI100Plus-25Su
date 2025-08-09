@@ -1,5 +1,5 @@
 ---
-title: Lecture_02_Python_Intro
+title: Lecture_03_Python_Intro
 separator: <!--s-->
 verticalSeparator: <!--v-->
 theme: simple

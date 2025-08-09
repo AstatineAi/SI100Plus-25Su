@@ -1,5 +1,5 @@
 ---
-title: Lecture_03_Var_Operator_Expr
+title: Lecture_04_Var_Operator_Expr
 separator: <!--s-->
 verticalSeparator: <!--v-->
 theme: simple
@@ -25,16 +25,6 @@ revealOptions:
   
   </div>
 </div>
-
-<!--v-->
-
-## 前置知识
-
-<div style="width: 100%; margin-top: 100px; text-align: center;">
-
-<font size="7"> **在开始这节课之前，先完成前两节录播课：计算机基础知识 & 编程语言和 Python 基础** </font>
-
-</div>  
 
 <!--v-->
 
