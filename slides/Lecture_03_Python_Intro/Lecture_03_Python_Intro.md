@@ -8,7 +8,7 @@ css: assets/custom.css
 makeTitle:
     lecture: SI100+ 2025 Lecture 3
     title: 编程语言和 Python 简介
-    detail: SI100+ 2025 Staff | 2025-08-20
+    detail: SI100+ 2025 Staff | 2025-08-09
 makeThanks: True
 revealOptions:
     transition: 'slide'

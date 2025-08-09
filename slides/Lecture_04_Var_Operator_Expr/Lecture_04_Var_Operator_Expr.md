@@ -8,7 +8,7 @@ css: assets/custom.css
 makeTitle:
     lecture: SI100+ 2025 Lecture 4
     title: 变量、运算符和表达式
-    detail: SI100+ 2025 Staff | 2025-08-20
+    detail: SI100+ 2025 Staff | 2025-08-09
 makeThanks: True
 revealOptions:
     transition: 'slide'
