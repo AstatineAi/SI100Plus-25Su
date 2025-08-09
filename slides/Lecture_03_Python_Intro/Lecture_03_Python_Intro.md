@@ -5,6 +5,11 @@ verticalSeparator: <!--v-->
 theme: simple
 highlightTheme: github
 css: assets/custom.css
+makeTitle:
+    lecture: SI100+ 2025 Lecture 3
+    title: 编程语言和 Python 简介
+    detail: SI100+ 2025 Staff | 2025-08-20
+makeThanks: True
 revealOptions:
     transition: 'slide'
     transitionSpeed: fast
@@ -12,16 +17,6 @@ revealOptions:
     slideNumber: "c/t"
     width: 1000
 ---
-
-<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
-  <div style="text-align: center; padding: 40px; background-color: white; border: 2px solid rgb(0, 63, 163); border-radius: 20px; box-shadow: 0 0 20px rgba(0,0,0,0.1);">
-    <h1 style="font-size: 48px; font-weight: bold; margin-bottom: 20px; color: #333;">SI100+ 2024 Lecture 2</h1>
-    <p style="font-size: 24px; color: #666;">编程语言和 Python 简介</p>
-    <p style="font-size: 16px; color: #999; margin-top: 20px;">SI100+ 2024 Staff | 2024-08-22</p>
-  </div>
-</div>
-
-<!--s-->
 
 <div class="middle center">
   <div style="width: 100%">
@@ -159,7 +154,7 @@ x = x + y # 这是不是说明 y = 0?
 凭什么不行？
 
 - 自然语言不够严谨：我们吃食堂 `->` 我们吃食堂的饭（✅）我们把食堂吃掉（❌）
-- 计算机的硬件：大量的逻辑门，只能按照确定性的规则工作
+- 计算机的硬件：只能按照确定性的规则工作
 
 该怎么办？
 
@@ -319,7 +314,7 @@ print("This is the magic of Python!")
 x = 123
 y = 456
 print(x + y)
-print("Hello, SI100+ 2024!")
+print("Hello, SI100+ 2025!")
 ```
 
 运行上面的代码，观察输出。
@@ -333,7 +328,7 @@ Python 的执行顺序是从上到下，逐行执行代码。
 **`print` 语句**
 
 ```py
-print("Hello, SI100+ 2024!")
+print("Hello, SI100+ 2025!")
 ``` 
 
 总结“规律”，`print` 语句会把括号里的内容打印到屏幕上。
@@ -436,15 +431,3 @@ x = 123 + 456 - (y * 5) ** 2
 - 编程语言有其自身的语法和语义，编程就是组合你需要的“意义”
 - 你的电脑上有一套软件，可以让你的 Python 代码能被计算机理解
 - Python 基础语义
-
-<!--s-->
-
-<div style="display: flex; justify-content: center; align-items: center; height: 100vh;   ">
-  <div style="text-align: center; padding: 40px; background-color: white; border-radius: 20px; box-shadow: 0 0 20px rgba(0,0,0,0.1);">
-    <div style="display: inline-block; padding: 20px 40px; border-radius: 10 px; margin-bottom: 20px;">
-      <h1 style="font-size: 48px; font-weight: bold; margin: 0; color: rgb(16, 33, 89)">Thanks for Listening</h1>
-    </div>
-    <p style="font-size: 24px; color: #666; margin: 0;">Any questions?</p>
-  </div>
-</div>
-
