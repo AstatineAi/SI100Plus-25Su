@@ -5,6 +5,11 @@ verticalSeparator: <!--v-->
 theme: simple
 highlightTheme: github
 css: assets/custom.css
+makeTitle:
+    lecture: SI100+ 2025 Lecture 4
+    title: 变量、运算符和表达式
+    detail: SI100+ 2025 Staff | 2025-08-20
+makeThanks: True
 revealOptions:
     transition: 'slide'
     transitionSpeed: fast
@@ -12,16 +17,6 @@ revealOptions:
     slideNumber: "c/t"
     width: 1000
 ---
-
-<div style="display: flex; justify-content: center; align-items: center; height: 700px;">
-  <div style="text-align: center; padding: 40px; background-color: white; border: 2px solid rgb(0, 63, 163); border-radius: 20px; box-shadow: 0 0 20px rgba(0,0,0,0.1);">
-    <h1 style="font-size: 48px; font-weight: bold; margin-bottom: 20px; color: #333;">SI100+ 2024 Python Lecture 3</h1>
-    <p style="font-size: 24px; color: #666;">变量、运算符和表达式</p>
-    <p style="font-size: 16px; color: #999; margin-top: 20px;">SI100+ 2024 Staff | 2024-08-24</p>
-  </div>
-</div>
-
-<!--s-->
 
 <div class="middle center">
   <div style="width: 100%">
@@ -290,6 +285,11 @@ Python 中的基本数据类型用于表示和操作不同种类的数据，主�
 - 数字 (Number)
 - 字符串 (String)
 - 布尔 (Boolean)
+
+你可能会问，为什么要有数据类型？
+
+- 不同的用途
+- 不同的使用方法
 
 <!--v-->
 
@@ -830,15 +830,3 @@ Python 的布尔运算符就能够这样“偷懒”。
   - 基本计算、比较、布尔（逻辑）运算
     - 短路运算符：`and` `or`
 - 表达式（一般/逻辑）及化简顺序
-
-<!--s-->
-
-<div style="display: flex; justify-content: center; align-items: center; height: 100vh;   ">
-  <div style="text-align: center; padding: 40px; background-color: white; border-radius: 20px; box-shadow: 0 0 20px rgba(0,0,0,0.1);">
-    <div style="display: inline-block; padding: 20px 40px; border-radius: 10 px; margin-bottom: 20px;">
-      <h1 style="font-size: 48px; font-weight: bold; margin: 0; color: rgb(16, 33, 89)">Thanks for Listening</h1>
-    </div>
-    <p style="font-size: 24px; color: #666; margin: 0;">Any questions?</p>
-  </div>
-</div>
-
