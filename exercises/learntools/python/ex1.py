@@ -108,46 +108,11 @@ class ArithmeticParensHard(ThoughtExperiment):
 
 ArithmeticParens = MultipartProblem(ArithmeticParensEasy, ArithmeticParensHard)
 
-class KFCProblem(FunctionProblem):
-    _var = 'is_KFC_wanted'
-
-    _hint = (
-        "这其实看起来更像一个语文题目。\n\n"
-        "首先，无可置疑的是，前两个条件是必需的，这是大前提。\n\n"
-        "第三行给出了一种 **基于前两个条件** 的可能情况，即 是周四 且 有人拼（人多不多无所谓，那就不用考虑）\n\n"
-        "第四行给出了另一种 **基于前两个条件** 的可能情况，即 饿了 且 人少\n\n"
-        "那么，第三行和第四行什么关系呢……\n\n"
-    )
-    _solution = (
-        "这其实看起来更像一个语文题目。\n\n"
-        "首先，无可置疑的是，前两个条件是必需的，这是大前提。\n\n"
-        "说明，我们得先确保前两个条件同时成立，也就是 `is_opened and wallet_money >= 50 and (其他条件)`，然后接下来都属于其他条件 \n\n\n\n"
-        "第三行给出了一种 **基于前两个条件** 的可能情况，即 是周四 且 有人拼（人多不多无所谓，那就不用考虑）\n\n"
-        "这是其他条件的一种，即 `is_thursday and has_nuggets_friends`\n\n\n\n"
-        "第四行给出了另一种 **基于前两个条件** 的可能情况，即 饿了 且 人 **不** 多\n\n"
-        "这也是其他条件的一种，即 `is_hungry and not is_full`\n\n\n\n"
-        "第三行和第四行是 **或** 的关系，即，你可以用“要么……要么……”连接\n\n"
-        "因此，其他条件应该是 (A or B) \n\n\n\n"
-        "参考答案：`return is_opened and wallet_money >= 50 and ((is_thursday and has_nuggets_friends) or (is_hungry and not is_full))`\n\n"
-        "如果有其他见解，欢迎发 Piazza\n\n"
-    )
-
-    _test_cases = [
-        ((True, True, False, True, False, 55), True), 
-        ((False, True, True, True, False, 25), False), 
-        ((False, True, True, True, False, 50), True), 
-        ((False, False, False, True, True, 25), False), 
-        ((False, False, False, False, False, 50), False), 
-        ((True, False, False, False, True, 50), False), 
-        ((False, True, False, True, False, 25), False), 
-        ((True, False, True, False, False, 50), False)
-    ]
 qvars = bind_exercises(globals(), [
     ExerciseFormatTutorial,
     CircleArea,
     VariableSwap,
     ArithmeticParens,
-    KFCProblem,
     ],
     start=0,
     )
