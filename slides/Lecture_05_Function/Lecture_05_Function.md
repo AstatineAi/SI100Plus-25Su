@@ -1,10 +1,15 @@
 ---
-title: Lecture_04_Function
+title: Lecture_05_Function
 separator: <!--s-->
 verticalSeparator: <!--v-->
 theme: simple
 highlightTheme: github
 css: assets/custom.css
+makeTitle:
+    lecture: SI100+ 2025 Lecture 5
+    title: 函数
+    detail: SI100+ 2025 Staff | 2025-08-11
+makeThanks: True
 revealOptions:
     transition: 'slide'
     transitionSpeed: fast
@@ -12,159 +17,6 @@ revealOptions:
     slideNumber: "c/t"
     width: 1000
 ---
-
-
-<div style="display: flex; justify-content: center; align-items: center; height: 700px;">
-  <div style="text-align: center; padding: 40px; background-color: white; border: 2px solid rgb(0, 63, 163); border-radius: 20px; box-shadow: 0 0 20px rgba(0,0,0,0.1);">
-    <h1 style="font-size: 48px; font-weight: bold; margin-bottom: 20px; color: #333;">SI100+ 2024 Lecture 4</h1>
-    <p style="font-size: 24px; color: #666;">函数</p>
-    <p style="font-size: 16px; color: #999; margin-top: 20px;">SI100+ 2024 Staff | 2024-08-26</p>
-  </div>
-</div>
-
-<!--s-->
-
-<div class="middle center">
-  <div style="width: 100%">
-
-  # Part.0 在开始之前
-  
-  </div>
-</div>
-
-<!--v-->
-
-## 如何查询已有函数的用法
-
-- 我们已经学会了调用 `print`, `input` 来完成一些基本操作
-- 但是 Python 还有更多函数
-- 前面提到了 `open('filename', '?')`，万一我忘记了 `?` 处应该填什么
-- 如何查询？
-
-</br>
-
-我们已经知道的：
-
-- Python 官方文档：https://docs.python.org/zh-cn/3/
-- STFW: Search the *Friendly* Web（记得看看 Lecture x 阅读材料）
-- 问 GPT?
-
-</br>
-
-其实还有更多的方法...
-
-<!--v-->
-
-## `help()`
-
-**这是什么？**
-
-- `help()` 可以查看某函数或对象的帮助
-- 在交互式命令行中输入 `help(x)` 并按下回车，可以看到关于 `x` 的帮助（`less` 模式）
-  - 如果 `x` 是函数那么则是对于这个函数的帮助
-  - 如果 `x` 是某个类型的字面值 / 变量，那么则是对于这个类型的帮助
-- 在其他情况下，`help()` 就相当于 "`print(帮助内容)` "
-
-</br>
-
-**演示**：Notebook 示例 3.0.1
-
-<!--v-->
-
-在交互式控制台（打开 Anaconda Prompt / Terminal，输入 Python 并回车后）
-
-```py
->>> help(print)
-Help on built-in function print in module builtins:
-print(*args, sep=' ', end='\n', file=None, flush=False)
-    Prints the values to a stream, or to sys.stdout by default.
-    sep
-      string inserted between values, default a space.
-    end
-      string appended after the last value, default a newline.
-    file
-      a file-like object (stream); defaults to the current sys.stdout.
-    flush
-      whether to forcibly flush the stream.
-~
-(END)
-```
-
-- 这里有特殊的浏览模式，按方向键可以上下翻页，按 `q` 退出
-
-<!--v-->
-
-## \[非课程内容\] `less`
-
-- Python 的控制台中的 `help` 使借用 `less` 命令输出的，在 `linux` 下，它是用来“展示”输出的（否则内容过多就会溢出屏幕而丢失）
-- 在很久以前，计算机里只有 `vi` 编辑器，它规定的 `:q` 退出， `J/K` 用来上下翻页，`Ctrl+U/D` 快速上下翻页。而这成为了当时的习惯，被沿用下来。
-- 当时 `less` 的作者 Mark Nudelman 只是想“方便的翻阅长长的报错”
-	- 他当时用的 `vi` 版本不能打开这么大的日志文件
-	- 另一个叫 `more` 的工具虽然能打开，但是不能向回翻<small>（现在似乎有了）</small>
-- `less` = `vi` 的操作模式 + `more` 的文件支持 的“查看器” （文件分页器）
-
-<div style="column-count: 2; padding-left: 20vh; padding-right: 20vh">
-
-<img src="https://www.globalnerdy.com/wp-content/uploads/2012/04/geeks-and-repetitive-tasks.jpg" width=300/>
-
-- 极客的浪漫莫过于此
-- 编程：重复事情上制胜的法宝
-
-</div>
-
-<!--v-->
-
-## \[非课程内容\] 代码提示：Pylance 语法分析
-
-- 将鼠标悬浮在 `print` 上，会弹出来一个小提示，会简单告诉你用法
-
-```py
-(function) # 告诉我们 `print` 是一个函数
-def print(
-    *values: object,
-    sep: str | None = " ",
-    end: str | None = "\n",
-    file: SupportsWrite[str] | None = None,
-    flush: Literal[False] = False
-) -> None: ...
-```
-
-- 除了鼠标悬浮，在你一边输入 `print(...)` 的时候，代码提示也会出现
-- 并且会用醒目的标识来指示你正在输入哪个参数
-
-```py
-# 尝试在 VSCode 中缓慢打出
-print("Hello", end="!")
-```
-
-<!--v-->
-
-## IPython 的小问号 `?`
-
-- 在 Jupyter Notebook / IPython 里，我们可以直接用 `?` 接在函数名字的末尾
-
-```py
-In [1]: print?
-Signature: print(*args, sep=' ', end='\n', file=None, flush=False)
-# 上面告诉了我们用法格式/定义，下面这一串是 docstring (函数自身携带的文档的内容)
-Docstring:
-Prints the values to a stream, or to sys.stdout by default.
-
-sep
-  string inserted between values, default a space.
-end
-  string appended after the last value, default a newline.
-file
-  a file-like object (stream); defaults to the current sys.stdout.
-flush
-  whether to forcibly flush the stream.
-# 最后告诉我们这是一个“内置函数或方法”
-Type:      builtin_function_or_method
-```
-
-**演示**：Notebook 示例 3.0.2
-
-<!--v-->
 
 ## 目录
 
@@ -638,6 +490,147 @@ print("外面的人", which_li_hua)
 
 <!--s-->
 
+<div class="middle center">
+  <div style="width: 100%">
+
+  # 另：如何查询函数用法
+  
+  </div>
+</div>
+
+<!--v-->
+
+## 如何查询已有函数的用法
+
+- 我们已经学会了调用 `print`, `input` 来完成一些基本操作
+- 但是 Python 还有更多函数
+- 如何查询？
+
+</br>
+
+我们已经知道的：
+
+- Python 官方文档：https://docs.python.org/zh-cn/3/
+- STFW: Search the *Friendly* Web（记得看看 Lecture x 阅读材料）
+- 问 GPT?
+
+</br>
+
+其实还有更多的方法...
+
+<!--v-->
+
+## `help()`
+
+**这是什么？**
+
+- `help()` 可以查看某函数或对象的帮助
+- 在交互式命令行中输入 `help(x)` 并按下回车，可以看到关于 `x` 的帮助（`less` 模式）
+  - 如果 `x` 是函数那么则是对于这个函数的帮助
+  - 如果 `x` 是某个类型的字面值 / 变量，那么则是对于这个类型的帮助
+- 在其他情况下，`help()` 就相当于 "`print(帮助内容)` "
+
+</br>
+
+**演示**：Notebook 示例 3.0.1
+
+<!--v-->
+
+在交互式控制台（打开 Anaconda Prompt / Terminal，输入 Python 并回车后）
+
+```py
+>>> help(print)
+Help on built-in function print in module builtins:
+print(*args, sep=' ', end='\n', file=None, flush=False)
+    Prints the values to a stream, or to sys.stdout by default.
+    sep
+      string inserted between values, default a space.
+    end
+      string appended after the last value, default a newline.
+    file
+      a file-like object (stream); defaults to the current sys.stdout.
+    flush
+      whether to forcibly flush the stream.
+~
+(END)
+```
+
+- 这里有特殊的浏览模式，按方向键可以上下翻页，按 `q` 退出
+
+<!--v-->
+
+## \[非课程内容\] `less`
+
+- Python 的控制台中的 `help` 使借用 `less` 命令输出的，在 `linux` 下，它是用来“展示”输出的（否则内容过多就会溢出屏幕而丢失）
+- 在很久以前，计算机里只有 `vi` 编辑器，它规定的 `:q` 退出， `J/K` 用来上下翻页，`Ctrl+U/D` 快速上下翻页。而这成为了当时的习惯，被沿用下来。
+- 当时 `less` 的作者 Mark Nudelman 只是想“方便的翻阅长长的报错”
+	- 他当时用的 `vi` 版本不能打开这么大的日志文件
+	- 另一个叫 `more` 的工具虽然能打开，但是不能向回翻<small>（现在似乎有了）</small>
+- `less` = `vi` 的操作模式 + `more` 的文件支持 的“查看器” （文件分页器）
+
+<div style="column-count: 2; padding-left: 20vh; padding-right: 20vh">
+
+<img src="https://www.globalnerdy.com/wp-content/uploads/2012/04/geeks-and-repetitive-tasks.jpg" width=300/>
+
+- 极客的浪漫莫过于此
+- 编程：重复事情上制胜的法宝
+
+</div>
+
+<!--v-->
+
+## \[非课程内容\] 代码提示：Pylance 语法分析
+
+- 将鼠标悬浮在 `print` 上，会弹出来一个小提示，会简单告诉你用法
+
+```py
+(function) # 告诉我们 `print` 是一个函数
+def print(
+    *values: object,
+    sep: str | None = " ",
+    end: str | None = "\n",
+    file: SupportsWrite[str] | None = None,
+    flush: Literal[False] = False
+) -> None: ...
+```
+
+- 除了鼠标悬浮，在你一边输入 `print(...)` 的时候，代码提示也会出现
+- 并且会用醒目的标识来指示你正在输入哪个参数
+
+```py
+# 尝试在 VSCode 中缓慢打出
+print("Hello", end="!")
+```
+
+<!--v-->
+
+## IPython 的小问号 `?`
+
+- 在 Jupyter Notebook / IPython 里，我们可以直接用 `?` 接在函数名字的末尾
+
+```py
+In [1]: print?
+Signature: print(*args, sep=' ', end='\n', file=None, flush=False)
+# 上面告诉了我们用法格式/定义，下面这一串是 docstring (函数自身携带的文档的内容)
+Docstring:
+Prints the values to a stream, or to sys.stdout by default.
+
+sep
+  string inserted between values, default a space.
+end
+  string appended after the last value, default a newline.
+file
+  a file-like object (stream); defaults to the current sys.stdout.
+flush
+  whether to forcibly flush the stream.
+# 最后告诉我们这是一个“内置函数或方法”
+Type:      builtin_function_or_method
+```
+
+**演示**：Notebook 示例 3.0.2
+
+<!--v-->
+
 ## Takeaway Message
 
 - **RTFM**, **STFW**, `help()`, `?`
@@ -646,14 +639,3 @@ print("外面的人", which_li_hua)
 - 函数的调用格式：`函数名(参数)`
 - 函数的返回值 & 返回语句：`return`
 - 全局变量和局部变量 & 变量的作用域
-
-<!--s-->
-
-<div style="display: flex; justify-content: center; align-items: center; height: 700px;   ">
-  <div style="text-align: center; padding: 40px; background-color: white; border-radius: 20px; box-shadow: 0 0 20px rgba(0,0,0,0.1);">
-    <div style="display: inline-block; padding: 20px 40px; border-radius: 10 px; margin-bottom: 20px;">
-      <h1 style="font-size: 48px; font-weight: bold; margin: 0; color: rgb(16, 33, 89)">Thanks for Listening</h1>
-    </div>
-    <p style="font-size: 24px; color: #666; margin: 0;">Any questions?</p>
-  </div>
-</div>
