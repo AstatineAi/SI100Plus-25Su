@@ -3,8 +3,9 @@ from maze.manager import GameManager
 from maze.statics import BlockType, GameMode
 from solve import command_queue, result_queue
 
-# time limit (frames)
-time_limit = 120 * 25
+FRAME = 240 # FPS
+TIME_LIMIT = 60 # Seconds
+
 
 def terminate_thread(thread):
     if not thread.is_alive():
@@ -27,8 +28,8 @@ def terminate_thread(thread):
 def main():
     from logic import operation
     
-    def fail(index: int):
-        print(f"Test Case {index} Failed")
+    def fail(index: int, error: str = "No error message provided"):
+        print(f"Test Case {index} Failed: {error}")
         print(f"Score: {score}/5")
         print(manager.maze)
         print(repr(manager.maze))
@@ -47,8 +48,14 @@ def main():
         
         command_queue.queue.clear()
         result_queue.queue.clear()
+
+        def sub_operation():
+            from logic import operation
+            import time
+            operation()
+            time.sleep(0.1)  # Allow time for the operation to complete before checking results
         
-        solve_thread = threading.Thread(target=operation)
+        solve_thread = threading.Thread(target=sub_operation)
         solve_thread.daemon = True
         solve_thread.start()
         
@@ -89,11 +96,11 @@ def main():
                 if manager.ended:
                     break
                 else:
-                    fail(i)
-            manager.clock.tick(120)
+                    fail(i, "Solver thread terminated unexpectedly")
+            manager.clock.tick(FRAME)
             running_time += 1
-            if running_time > time_limit:
-                fail(i)
+            if running_time > TIME_LIMIT * FRAME:
+                fail(i, "Time limit exceeded")
                 
     print(f"Score: 5/5")
 
