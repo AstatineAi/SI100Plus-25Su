@@ -16,6 +16,7 @@ ModuleNotFoundError: No module named 'pygame'
 如果你不知道如何通过 `conda` / `pip` 在某个虚拟环境中安装 `pygame` 库，可以参考 Lecture_06_How_To_Use_Python 来安装额外的库。
 
 > 如果下载速度过慢，可以尝试**换源**，以清华大学镜像源为例，可以在 `pip install ...` / `conda install ...` 命令后加入 `-i https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple`
+> 以后在安装类似的第三方库的时候也可以这样使用！
 
 ```
 Defaulting to user installation because normal site-packages is not writeable
