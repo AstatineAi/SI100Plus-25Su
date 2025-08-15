@@ -1,10 +1,15 @@
 ---
-title: Lecture_05_Control_Flow
+title: Lecture_06_Control_Flow
 separator: <!--s-->
 verticalSeparator: <!--v-->
 theme: simple
 highlightTheme: github
 css: assets/custom.css
+makeTitle:
+    lecture: SI100+ 2025 Lecture 6
+    title: 控制流和更多类型
+    detail: SI100+ 2025 Staff | 2025-08-15
+makeThanks: True
 revealOptions:
     transition: 'slide'
     transitionSpeed: fast
@@ -13,18 +18,15 @@ revealOptions:
     width: 1000
 ---
 
+<div class="middle center">
+  <div style="width: 100%">
 
-<div style="display: flex; justify-content: center; align-items: center; height: 700px;">
-  <div style="text-align: center; padding: 40px; background-color: white; border: 2px solid rgb(0, 63, 163); border-radius: 20px; box-shadow: 0 0 20px rgba(0,0,0,0.1);">
-    <h1 style="font-size: 48px; font-weight: bold; margin-bottom: 20px; color: #333;">SI100+ 2024 Python Lecture 5</h1>
-    <p style="font-size: 24px; color: #666;">控制流</p>
-    <p style="font-size: 16px; color: #999; margin-top: 20px;">SI100+ 2024  Staff | 2024-08-26</p>
+# 00. 控制流
+  
   </div>
 </div>
 
-<!--s-->
 
-# 00. 控制流
 
 <!--v-->
 
@@ -42,7 +44,14 @@ revealOptions:
 
 <!--s-->
 
+<div class="middle center">
+  <div style="width: 100%">
+
 # 01. 条件结构
+  
+  </div>
+</div>
+
 
 <!--v-->
 
@@ -340,8 +349,27 @@ def fly():
 ```
 
 <!--s-->
+<div class="middle center">
+  <div style="width: 100%">
 
 # 02. 更多类型！列表、元组与字典
+  
+  </div>
+</div>
+
+<!--v-->
+
+## 本节概览
+
+### （列表，元组，集合，字典）
+
+1. 列表（List）：如何把一大堆东西按顺序装在一个变量里？
+
+2. 元组（Tuple）：列表的不可修改版。
+
+3. 集合（Set）：没有重复元素。
+
+4. 字典 （Dictionary）：根据一个有含义的索引能快速找到内容。
 
 <!--v-->
 
@@ -418,7 +446,7 @@ tup3 = (50,) # 元组中只包含一个元素时，需要在元素后面添加�
 
 * 集合中的元素不会重复，并且可以进行交集、并集、差集等常见的集合操作
 
-* 可以使用大括号 { } 创建集合，元素之间用逗号 , 分隔， 或者也可以使用 `set()` 函数创建集合
+* 可以使用大括号 `{...}` 创建集合（但是空集合只能用 `set()`），元素之间用逗号 , 分隔， 或者也可以使用 `set()` 函数创建集合
 
 ```python []
 set1 = {1, 2, 3, 4}            # 直接使用大括号创建集合
@@ -433,15 +461,21 @@ set2 = set([4, 5, 6, 7])      # 使用 set() 函数从列表创建集合
 
 1. 列表（List）：有序，可更改，可以有重复的成员
 
-2. 元组（tuple）：有序，不可更改，可以有重复的成员
+2. 元组（Tuple）：有序，不可更改，可以有重复的成员
 
-3. 集合（set）：无序，无索引，没有重复的成员。
+3. 集合（Set）：无序，无索引，没有重复的成员。
 
 4. 字典 （Dictionary）：无序，可更改，有索引，没有重复的成员(见末尾)
 
 <!--s-->
 
+<div class="middle center">
+  <div style="width: 100%">
+
 # 03.循环语句
+    
+  </div>
+</div>
 
 <!--v-->
 
@@ -807,18 +841,6 @@ print(is_prime(input_num))
 
 <!--s-->
 
-<div style="display: flex; justify-content: center; align-items: center; height: 700px;" id="canvas">
-  <div style="text-align: center; padding: 40px; background-color: white; border-radius: 20px; box-shadow: 0 0 20px rgba(0,0,0,0.1);">
-    <div style="display: inline-block; padding: 20px 40px; border-radius: 10 px; margin-bottom: 20px;">
-      <h1 style="font-size: 48px; font-weight: bold; margin: 0; color: rgb(16, 33, 89)">Thanks for Listening</h1>
-    </div>
-    <p style="font-size: 24px; color: #666; margin: 0;">Any questions?</p>
-  </div>
-</div>
-
-
-<!--v-->
-
 # ??. 附加部分
 
 由于各种原因，不确定是否有充足的时间，这一部分不一定会在上课中讲到～
@@ -857,11 +879,11 @@ my_info = { # 这里用了一个比较美观的换行写法，适用于长文本
 
 <!--v-->
 
-## 简单的调试：追踪你的代码运行
+## 简单的调试入门：追踪你的代码运行
 
 - 注意到资料的**猜数字**代码左侧有一个小红点了吗？这个点的名字叫断点 (breakpoint)
 - 鼠标悬浮在当前行的最左侧，就可以启用/禁用该断点
-- 使用**调试**模式启动（代码块旁边有一个 ▶️ 的下拉菜单里，有一个 调试该代码块）时
+- 使用**调试**模式启动时（运行按钮 ▶️ 的下拉菜单里，有一个 `调试该代码块`）
     - 代码会自动在此处停止
     - 上面会多出一个执行的小方框
         - 我们暂时只需要无脑点 步入 (Step into) 就可以一步一步执行了
@@ -883,3 +905,6 @@ my_info = { # 这里用了一个比较美观的换行写法，适用于长文本
     - 输出的格式是否更美观了？字符串是否可以从分割的变成一个整体了？
     - 你能理解格式化输出的意义了吗？
 - 其实观察就可以发现，就是“让数字占据两位，用空格补齐”，那如果数字有三位呢？修改代码，观察结果。
+- 如果我希望不用空格填充呢？或者用 `0` 来填充？甚至限制小数位数呢？
+- 请 RTFM / STFW，并且将你的发现发送到 Piazza～
+    - （记得格式严谨，适当标注来源，减少 AI 痕迹能更快获得 Likes）
