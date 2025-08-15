@@ -17,7 +17,7 @@ class MapSettings:
     blockYNum = 25
     
     maxBlockNum = 35
-    minBlockNum = 21
+    minBlockNum = 30
     
     playModeBlockXNum = 13
     playModeBlockYNum = 13

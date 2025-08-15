@@ -89,10 +89,6 @@ class GameManager:
     def update(self):
         pygame.display.set_caption(
             f"Maze Game - FPS: {int(self.clock.get_fps())}")
-        # self._temp_tick += 1
-        # if self._temp_tick > 30:
-        #     self.turn_right()
-        #     self._temp_tick = 0
         self.maze.update()
 
     def draw(self):
@@ -135,7 +131,6 @@ class GameManager:
             return BlockType.WALL
         elif (x - 1, y - 1) == self.maze.exit_pos:
             return BlockType.EXIT
-        # TODO: Change single bool to multi BlockType
         return BlockType(self.maze.grid[x - 1][y - 1])
 
     def turn_left(self):

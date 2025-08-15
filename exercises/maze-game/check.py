@@ -31,8 +31,8 @@ def main():
     def fail(index: int, error: str = "No error message provided"):
         print(f"Test Case {index} Failed: {error}")
         print(f"Score: {score}/5")
-        print(manager.maze)
-        print(repr(manager.maze))
+        # print(manager.maze)
+        # print(repr(manager.maze))
         pygame.quit()
         sys.exit()
     

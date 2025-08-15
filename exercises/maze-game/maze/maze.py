@@ -6,9 +6,9 @@ from . import objs
 from .statics import Direction, MapSettings
 move_directions = [
     (0, -1), # UP
-    (1, 0), # RIGHT
-    (0, 1), # DOWN
-    (-1, 0) # LEFT
+    (1, 0),  # RIGHT
+    (0, 1),  # DOWN
+    (-1, 0)  # LEFT
 ]
 
 class Maze:
