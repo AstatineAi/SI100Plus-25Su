@@ -1,12 +1,12 @@
 ---
-title: Lecture_09_OOP
+title: Lecture_07_OOP
 separator: <!--s-->
 verticalSeparator: <!--v-->
 theme: simple
 highlightTheme: github
 css: assets/custom.css
 makeTitle:
-    lecture: SI100+ 2025 Lecture 9
+    lecture: SI100+ 2025 Lecture 7
     title: Python 面向对象
     detail: SI100+ 2025 Staff | 2025-08-16
 makeThanks: True
@@ -88,7 +88,7 @@ def set_time(new_year, new_month, new_day):
     day = new_day
 ```
 
-**演示**：Notebook 示例 9.1.1
+**演示**：Notebook 示例 7.1.1
 
 </div>
 
@@ -114,7 +114,7 @@ def set_time(new_year, new_month, new_day, new_hour, ...):
 
 <div class="fragment">
 
-<b>演示</b>：Notebook 示例 9.1.2
+<b>演示</b>：Notebook 示例 7.1.2
 
 </div>
 
@@ -167,7 +167,7 @@ def set_time(clock, new_time):
         clock[i] = new_time[i]
 ```
 
-**演示**：Notebook 示例 9.1.3
+**演示**：Notebook 示例 7.1.3
 
 </div>
 
@@ -312,7 +312,7 @@ class Clock:
 
 回想我们之前见过的类和实例，比如 `str`, `list`:
 
-**演示**：Notebook 示例 9.2.1, 9.2.2, 9.2.3
+**演示**：Notebook 示例 7.2.1, 7.2.2, 7.2.3
 
 </div>
 
@@ -336,7 +336,7 @@ class Clock:
 **新东西 2：self**
 
 - 该怎么说明我想访问的不是模板而是实例里面的东西？
-- **演示**：Notebook 示例 9.2.4, 9.2.5
+- **演示**：Notebook 示例 7.2.4, 7.2.5
 
 <!--v-->
 
@@ -426,7 +426,7 @@ class Clock:
 
 <br/>
 
-**演示**: Notebook 示例 9.3.1
+**演示**: Notebook 示例 7.3.1
 
 <!--v-->
 
@@ -463,7 +463,7 @@ class Clock:
 
 </br>
 
-**演示**: Notebook 示例 9.3.2
+**演示**: Notebook 示例 7.3.2
 
 <!--v-->
 
