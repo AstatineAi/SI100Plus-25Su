@@ -376,6 +376,29 @@ clock1 = Clock(2025, 8, 16)
 - `self.year = year`：为当前实例添加属性 `year`，并将其值设置为传入的 `year` 参数
 - `clock1 = Clock(2025, 8, 16)`：创建一个 `Clock` 类的实例，传入的 `year`、`month` 和 `day` 分别为 2025、8 和 16
 
+<!--v-->
+
+## 类的实例化与成员
+
+在 Python 中，一个类是什么是由它的成员和方法决定的。
+
+- `len()`：尝试调用方法 `__len__`，因此实现了 `__len__` 的类就是“有长度的”
+- `str()`：尝试调用方法 `__str__`
+- `+`：尝试调用方法 `__add__`
+
+于是我们可以自己定义一些运算符的行为，例如实现 `__str__` 来让 `Clock` 实例能直接被 `print` 函数打印。
+
+```python
+class Clock:
+    def __init__(self, year, month, day):
+        self.year = year
+        self.month = month
+        self.day = day
+
+    def __str__(self):
+        return f"{self.year}-{self.month:02d}-{self.day:02d}"
+```
+
 <!--s-->
 
 <div class="middle center">
